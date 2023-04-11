@@ -1,0 +1,16 @@
+<app-search></app-search>
+<app-not-found
+  [visible]="!movies || !movies.length"
+  resetLinkText="Reset Search">
+</app-not-found>
+<ul>
+  <li *ngFor="let movie of movies">
+    <a routerLink="/movie/{{movie.id}}">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{movie.title}}">
+      <div class="content">
+        <div class="name">{{movie.title}}</div>
+        <div class="item-footer">{{movie.release_date}}</div>
+      </div>
+    </a>
+  </li>
+</ul>
